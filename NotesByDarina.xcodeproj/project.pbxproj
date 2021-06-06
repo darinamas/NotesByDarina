@@ -64,9 +64,9 @@
 			children = (
 				449CF6C6266A7164003E783B /* AppDelegate.swift */,
 				449CF6C8266A7164003E783B /* SceneDelegate.swift */,
+				449CF6CC266A7164003E783B /* Main.storyboard */,
 				449CF6DC266A7490003E783B /* SingleTon.swift */,
 				449CF6CA266A7164003E783B /* ViewController.swift */,
-				449CF6CC266A7164003E783B /* Main.storyboard */,
 				449CF6DE266A7677003E783B /* TextViewController.swift */,
 				449CF6DA266A735E003E783B /* FirstTableViewCell.swift */,
 				449CF6CF266A7165003E783B /* Assets.xcassets */,

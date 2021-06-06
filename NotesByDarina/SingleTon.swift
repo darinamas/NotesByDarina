@@ -9,6 +9,9 @@ import Foundation
 
 class SingleTon {
    static var shared = SingleTon()
+   
+    var arrayTextFromTextField = ["Hello", "Bye"]
+    
     
     private init() {
     }

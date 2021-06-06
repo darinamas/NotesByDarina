@@ -20,25 +20,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return SingleTon.shared.arrayTextFromTextField.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FirstTableViewCell
         
-        cell.labelForCell.text = "Hello"
-        
+        cell.labelForCell.text = SingleTon.shared.arrayTextFromTextField[indexPath.row]
+ 
         return cell
     }
     
-    @IBAction func addBtn(_ sender: Any) {
+    @IBAction func tapAddBtn(_ sender: Any) {
         let storBoard = UIStoryboard(name: "Main", bundle: nil)
-        let textViewAdd = storBoard.instantiateViewController(withIdentifier: "textViewController")
-        
-        show(textViewAdd, sender: nil)
+        let textFieldVC = storBoard.instantiateViewController(withIdentifier: "textViewController") as! TextViewController
+       
+        show(textFieldVC, sender: nil)
     }
     
-
+    
+  
 }
 
