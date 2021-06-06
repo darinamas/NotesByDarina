@@ -16,6 +16,7 @@
 		449CF6DB266A735E003E783B /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449CF6DA266A735E003E783B /* FirstTableViewCell.swift */; };
 		449CF6DD266A7490003E783B /* SingleTon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449CF6DC266A7490003E783B /* SingleTon.swift */; };
 		449CF6DF266A7677003E783B /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449CF6DE266A7677003E783B /* TextViewController.swift */; };
+		449CF6E1266CFC14003E783B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449CF6E0266CFC14003E783B /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		449CF6DA266A735E003E783B /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		449CF6DC266A7490003E783B /* SingleTon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTon.swift; sourceTree = "<group>"; };
 		449CF6DE266A7677003E783B /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		449CF6E0266CFC14003E783B /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				449CF6DC266A7490003E783B /* SingleTon.swift */,
 				449CF6CA266A7164003E783B /* ViewController.swift */,
 				449CF6DE266A7677003E783B /* TextViewController.swift */,
+				449CF6E0266CFC14003E783B /* EditViewController.swift */,
 				449CF6DA266A735E003E783B /* FirstTableViewCell.swift */,
 				449CF6CF266A7165003E783B /* Assets.xcassets */,
 				449CF6D1266A7165003E783B /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 				449CF6DD266A7490003E783B /* SingleTon.swift in Sources */,
 				449CF6C9266A7164003E783B /* SceneDelegate.swift in Sources */,
 				449CF6DF266A7677003E783B /* TextViewController.swift in Sources */,
+				449CF6E1266CFC14003E783B /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,11 +35,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func tapAddBtn(_ sender: Any) {
         let storBoard = UIStoryboard(name: "Main", bundle: nil)
         let textFieldVC = storBoard.instantiateViewController(withIdentifier: "textViewController") as! TextViewController
-       
+        
         show(textFieldVC, sender: nil)
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storBoard = UIStoryboard(name: "Main", bundle: nil)
+        let editFieldVC = storBoard.instantiateViewController(withIdentifier: "EditVC") as! EditViewController
+       
+        editFieldVC.text1 = SingleTon.shared.arrayTextFromTextField[indexPath.row]
+        editFieldVC.indexPathForEdit = indexPath.row
+        
+        show(editFieldVC, sender: nil)
+    }
   
 }
 

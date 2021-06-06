@@ -88,6 +88,44 @@
             </objects>
             <point key="canvasLocation" x="716" y="-40"/>
         </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="UZz-ZK-SoI">
+            <objects>
+                <viewController storyboardIdentifier="EditVC" id="qMR-Gi-ZPu" customClass="EditViewController" customModule="NotesByDarina" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t5d-gC-7RD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cav-Ub-qca">
+                                <rect key="frame" x="10" y="148" width="394" height="704"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mAB-CO-Twr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cav-Ub-qca" firstAttribute="top" secondItem="mAB-CO-Twr" secondAttribute="top" constant="60" id="0pp-YY-3aB"/>
+                            <constraint firstItem="cav-Ub-qca" firstAttribute="leading" secondItem="mAB-CO-Twr" secondAttribute="leading" constant="10" id="7JY-vk-jkc"/>
+                            <constraint firstItem="mAB-CO-Twr" firstAttribute="trailing" secondItem="cav-Ub-qca" secondAttribute="trailing" constant="10" id="Aqy-sr-RlD"/>
+                            <constraint firstItem="mAB-CO-Twr" firstAttribute="bottom" secondItem="cav-Ub-qca" secondAttribute="bottom" constant="10" id="xfp-V6-8Pe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4P0-Ui-WfC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="hLF-Pc-xDT">
+                            <connections>
+                                <action selector="doneBtn:" destination="qMR-Gi-ZPu" id="lPx-GB-9CO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="cav-Ub-qca" id="d3V-kR-5hS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0u-Qi-o23" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2099" y="-680"/>
+        </scene>
         <!--Text View Controller-->
         <scene sceneID="ahf-fx-4ey">
             <objects>
@@ -143,6 +181,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8HO-WD-eV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1381" y="-40"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Y2L-rA-0SR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="52h-Te-LE7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4kO-UK-4J8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qMR-Gi-ZPu" kind="relationship" relationship="rootViewController" id="8lg-sA-iVA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yRo-GE-tcd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1380" y="-680"/>
         </scene>
     </scenes>
     <resources>
