@@ -17,6 +17,9 @@
 		449CF6DD266A7490003E783B /* SingleTon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449CF6DC266A7490003E783B /* SingleTon.swift */; };
 		449CF6DF266A7677003E783B /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449CF6DE266A7677003E783B /* TextViewController.swift */; };
 		449CF6E1266CFC14003E783B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449CF6E0266CFC14003E783B /* EditViewController.swift */; };
+		44A2C95B26722BB1000047F2 /* PresenterMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A2C95A26722BB1000047F2 /* PresenterMainVC.swift */; };
+		44A2C97F26723F6F000047F2 /* PresenterTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A2C97E26723F6F000047F2 /* PresenterTextVC.swift */; };
+		44A2C98126723F82000047F2 /* PresenterEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A2C98026723F82000047F2 /* PresenterEditVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		449CF6DC266A7490003E783B /* SingleTon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTon.swift; sourceTree = "<group>"; };
 		449CF6DE266A7677003E783B /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		449CF6E0266CFC14003E783B /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		44A2C95A26722BB1000047F2 /* PresenterMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterMainVC.swift; sourceTree = "<group>"; };
+		44A2C97E26723F6F000047F2 /* PresenterTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTextVC.swift; sourceTree = "<group>"; };
+		44A2C98026723F82000047F2 /* PresenterEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterEditVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,15 +74,42 @@
 				449CF6C8266A7164003E783B /* SceneDelegate.swift */,
 				449CF6CC266A7164003E783B /* Main.storyboard */,
 				449CF6DC266A7490003E783B /* SingleTon.swift */,
-				449CF6CA266A7164003E783B /* ViewController.swift */,
-				449CF6DE266A7677003E783B /* TextViewController.swift */,
-				449CF6E0266CFC14003E783B /* EditViewController.swift */,
-				449CF6DA266A735E003E783B /* FirstTableViewCell.swift */,
+				44A2C95726722B4E000047F2 /* MainVC */,
+				44A2C95826722B64000047F2 /* TextVC */,
+				44A2C95926722B78000047F2 /* EditVC */,
 				449CF6CF266A7165003E783B /* Assets.xcassets */,
 				449CF6D1266A7165003E783B /* LaunchScreen.storyboard */,
 				449CF6D4266A7165003E783B /* Info.plist */,
 			);
 			path = NotesByDarina;
+			sourceTree = "<group>";
+		};
+		44A2C95726722B4E000047F2 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				449CF6CA266A7164003E783B /* ViewController.swift */,
+				44A2C95A26722BB1000047F2 /* PresenterMainVC.swift */,
+				449CF6DA266A735E003E783B /* FirstTableViewCell.swift */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		44A2C95826722B64000047F2 /* TextVC */ = {
+			isa = PBXGroup;
+			children = (
+				449CF6DE266A7677003E783B /* TextViewController.swift */,
+				44A2C97E26723F6F000047F2 /* PresenterTextVC.swift */,
+			);
+			path = TextVC;
+			sourceTree = "<group>";
+		};
+		44A2C95926722B78000047F2 /* EditVC */ = {
+			isa = PBXGroup;
+			children = (
+				449CF6E0266CFC14003E783B /* EditViewController.swift */,
+				44A2C98026723F82000047F2 /* PresenterEditVC.swift */,
+			);
+			path = EditVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,12 +182,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44A2C97F26723F6F000047F2 /* PresenterTextVC.swift in Sources */,
+				44A2C98126723F82000047F2 /* PresenterEditVC.swift in Sources */,
 				449CF6CB266A7164003E783B /* ViewController.swift in Sources */,
 				449CF6C7266A7164003E783B /* AppDelegate.swift in Sources */,
 				449CF6DB266A735E003E783B /* FirstTableViewCell.swift in Sources */,
 				449CF6DD266A7490003E783B /* SingleTon.swift in Sources */,
 				449CF6C9266A7164003E783B /* SceneDelegate.swift in Sources */,
 				449CF6DF266A7677003E783B /* TextViewController.swift in Sources */,
+				44A2C95B26722BB1000047F2 /* PresenterMainVC.swift in Sources */,
 				449CF6E1266CFC14003E783B /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

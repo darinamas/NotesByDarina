@@ -8,6 +8,8 @@
 import UIKit
 
 class EditViewController: UIViewController {
+    
+    var presenter = PresenterEditVC ()
 
     var text1 = ""
     var indexPathForEdit = 0
@@ -16,8 +18,10 @@ class EditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textField.text = text1
-        print(text1)
+        presenter.view = self
+        
+        presenter.showText(text: text1) // show text in text field
+     
     }
     
 
@@ -26,13 +30,14 @@ class EditViewController: UIViewController {
         let mainVC = storBoard.instantiateViewController(withIdentifier: "MainVC") as! ViewController
         saveText()
         
-        show(mainVC, sender: nil)
+        navigationController?.popViewController(animated: true) //otobrazajetsja VC
         
     }
     
-    func saveText() {
-        SingleTon.shared.arrayTextFromTextField[indexPathForEdit] = textField.text!
-        print("Singleton array: \(SingleTon.shared.arrayTextFromTextField) ")
+    func saveText() {  // save edited text in the array in ST
+  
+        presenter.changeTextForRow(indexPath: indexPathForEdit)
+   
     }
 
 }

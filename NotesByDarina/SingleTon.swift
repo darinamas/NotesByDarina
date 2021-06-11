@@ -16,3 +16,8 @@ class SingleTon {
     private init() {
     }
 }
+
+struct Note {
+    var text: String
+    var date: Date?
+}
