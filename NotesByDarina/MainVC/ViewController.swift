@@ -26,23 +26,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.reloadData()
     }
     
+    @IBAction func reloadData(_ sender: Any) {
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return SingleTon.shared.arrayTextFromTextField.count //return number of array elements in ST
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FirstTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FirstTableViewCell //pereispolzujutsya yacejki
+        
+        if SingleTon.shared.arrayWithIndexEdited[indexPath.row] == true  {
+            cell.backgroundColor = .yellow
+        }
         
         cell.labelForCell.text = SingleTon.shared.arrayTextFromTextField[indexPath.row]
- 
+      
         return cell
     }
     
     @IBAction func tapAddBtn(_ sender: Any) {  // when we tap on the + TextVC appear
         let storBoard = UIStoryboard(name: "Main", bundle: nil)
         let textFieldVC = storBoard.instantiateViewController(withIdentifier: "textViewController") as! TextViewController
-        presenter.changeColor()
+        
         show(textFieldVC, sender: nil)
     }
     

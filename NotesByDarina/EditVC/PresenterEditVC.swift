@@ -21,4 +21,12 @@ class PresenterEditVC {
         SingleTon.shared.arrayTextFromTextField[indexPath] = view!.textField.text!
         print("Singleton array: \(SingleTon.shared.arrayTextFromTextField) ")
     }
+    
+    func delTextFromArray(indexPath: Int) {
+        print(indexPath)
+        
+        SingleTon.shared.arrayWithIndexEdited.remove(at: indexPath)
+       SingleTon.shared.arrayTextFromTextField.remove(at: indexPath)
+        
+    }
 }

@@ -14,6 +14,7 @@ class EditViewController: UIViewController {
     var text1 = ""
     var indexPathForEdit = 0
     
+    
     @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
@@ -31,8 +32,10 @@ class EditViewController: UIViewController {
         saveText()
         
         navigationController?.popViewController(animated: true) //otobrazajetsja VC
-        
+        SingleTon.shared.arrayWithIndexEdited[indexPathForEdit] = true
+    print("Nas array \(SingleTon.shared.arrayWithIndexEdited)")
     }
+    
     
     func saveText() {  // save edited text in the array in ST
   
@@ -40,4 +43,12 @@ class EditViewController: UIViewController {
    
     }
 
+    @IBAction func deleteText(_ sender: Any) {
+        print("Index from controller:  \(indexPathForEdit)")
+        
+        presenter.delTextFromArray(indexPath: indexPathForEdit)
+        print(SingleTon.shared.arrayTextFromTextField)
+        print(SingleTon.shared.arrayWithIndexEdited)
+        navigationController?.popViewController(animated: true) //otobrazajetsja VC, ubirajet tekusii
+    }
 }

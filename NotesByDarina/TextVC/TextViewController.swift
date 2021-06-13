@@ -20,16 +20,18 @@ class TextViewController: UIViewController {
     }
     
     @IBAction func saveBtn(_ sender: Any) { //
+        SingleTon.shared.arrayWithIndexEdited.append(false)
         let storBoard = UIStoryboard(name: "Main", bundle: nil)
         let mainVC = storBoard.instantiateViewController(withIdentifier: "MainVC") as! ViewController
         saveText()
     
         navigationController?.popViewController(animated: true) //show previus VC
-    
+        
     }
     
     func saveText() { // append new note in ST array
-        presenter.appendTextToArray()
+     //   view!.textField.text!
+        presenter.appendTextToArray(text: textField.text!) //
     }
     
 }

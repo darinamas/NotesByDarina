@@ -37,14 +37,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="O8v-f3-gK0" customClass="FirstTableViewCell" customModule="NotesByDarina" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="53"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="53.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O8v-f3-gK0" id="snd-tG-wPk">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="53.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2t-Gg-7Og">
-                                                    <rect key="frame" x="30" y="16" width="354" height="21"/>
+                                                    <rect key="frame" x="30" y="16" width="354" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -74,6 +74,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="Hsy-3R-toO">
+                        <barButtonItem key="leftBarButtonItem" title="reload" id="ins-cf-zPr">
+                            <connections>
+                                <action selector="reloadData:" destination="Wre-B4-JXT" id="glV-1u-e7L"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="GSz-0t-hnn">
                             <connections>
                                 <action selector="tapAddBtn:" destination="Wre-B4-JXT" id="eST-o7-CZm"/>
@@ -112,11 +117,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4P0-Ui-WfC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="hLF-Pc-xDT">
-                            <connections>
-                                <action selector="doneBtn:" destination="qMR-Gi-ZPu" id="lPx-GB-9CO"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="done" id="hLF-Pc-xDT">
+                                <connections>
+                                    <action selector="doneBtn:" destination="qMR-Gi-ZPu" id="lPx-GB-9CO"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="Jjm-Sz-CQQ">
+                                <connections>
+                                    <action selector="deleteText:" destination="qMR-Gi-ZPu" id="LAt-7p-C1S"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="textField" destination="cav-Ub-qca" id="d3V-kR-5hS"/>

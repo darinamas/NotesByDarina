@@ -10,8 +10,9 @@ import Foundation
 class SingleTon {
    static var shared = SingleTon()
    
-    var arrayTextFromTextField = ["Hello", "Bye"]
-    
+    var arrayTextFromTextField = ["Hello", "Bye", "CC"]
+    //var isCellEdit = false
+    var arrayWithIndexEdited: [Bool] = [false, false, false]
     
     private init() {
     }

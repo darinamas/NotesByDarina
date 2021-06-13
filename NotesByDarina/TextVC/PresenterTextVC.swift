@@ -11,8 +11,8 @@ class PresenterTextVC {
     var view: TextViewController?
     
     
-    func appendTextToArray () { // append text to array in ST
-        SingleTon.shared.arrayTextFromTextField.append("\(view!.textField.text!)")
+    func appendTextToArray (text: String) { // append text to array in ST
+        SingleTon.shared.arrayTextFromTextField.append(text)
         print("Singleton array: \(SingleTon.shared.arrayTextFromTextField) ")
     }
 }
