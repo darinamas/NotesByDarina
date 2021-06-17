@@ -13,16 +13,21 @@ class EditViewController: UIViewController {
 
     var text1 = ""
     var indexPathForEdit = 0
+    let backImg: UIImage = UIImage(named: "backArrow")! // img for back arrow
+    let backButton = UIBarButtonItem() //back button title
     
+   // @IBOutlet weak var textField: UITextField!
     
-    @IBOutlet weak var textField: UITextField!
-    
+    @IBOutlet weak var textFieldView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.view = self
-        
         presenter.showText(text: text1) // show text in text field
      
+        navigationController?.navigationBar.backIndicatorImage = backImg //custom back button
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImg //back btn arrow
+        backButton.title = " " //back button title
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
 
@@ -33,7 +38,7 @@ class EditViewController: UIViewController {
         
         navigationController?.popViewController(animated: true) //otobrazajetsja VC
         SingleTon.shared.arrayWithIndexEdited[indexPathForEdit] = true
-    print("Nas array \(SingleTon.shared.arrayWithIndexEdited)")
+        print("Nas array \(SingleTon.shared.arrayWithIndexEdited)")
     }
     
     

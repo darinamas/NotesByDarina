@@ -13,20 +13,19 @@ class PresenterEditVC {
     
     func showText(text: String) { //shows text to edit in the text field
         
-        view!.textField.textColor = .magenta
-        view!.textField.text = text
+        view!.textFieldView.text = text
     }
     
     func changeTextForRow (indexPath: Int) {  // changed text in element array in ST
-        SingleTon.shared.arrayTextFromTextField[indexPath] = view!.textField.text!
+        SingleTon.shared.arrayTextFromTextField[indexPath] = view!.textFieldView.text!
         print("Singleton array: \(SingleTon.shared.arrayTextFromTextField) ")
     }
     
     func delTextFromArray(indexPath: Int) {
         print(indexPath)
         
-        SingleTon.shared.arrayWithIndexEdited.remove(at: indexPath)
-       SingleTon.shared.arrayTextFromTextField.remove(at: indexPath)
+        SingleTon.shared.arrayWithIndexEdited.remove(at: indexPath) 
+        SingleTon.shared.arrayTextFromTextField.remove(at: indexPath)
         
     }
 }

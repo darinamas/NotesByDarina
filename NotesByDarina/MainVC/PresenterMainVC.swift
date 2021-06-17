@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PresenterMainVC{
+class PresenterMainVC {
     
     var view: ViewController?
     

@@ -11,5 +11,6 @@ class FirstTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelForCell: UILabel!
     
-
+    
+    @IBOutlet weak var viewForCell: UIView!
 }
