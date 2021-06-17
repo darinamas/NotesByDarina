@@ -106,54 +106,6 @@
             </objects>
             <point key="canvasLocation" x="716" y="-40"/>
         </scene>
-        <!--Edit-->
-        <scene sceneID="UZz-ZK-SoI">
-            <objects>
-                <viewController storyboardIdentifier="EditVC" id="qMR-Gi-ZPu" customClass="EditViewController" customModule="NotesByDarina" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="t5d-gC-7RD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="aNv-7T-hab">
-                                <rect key="frame" x="10" y="98" width="394" height="734"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="mAB-CO-Twr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="aNv-7T-hab" firstAttribute="top" secondItem="mAB-CO-Twr" secondAttribute="top" constant="10" id="31F-xd-SyT"/>
-                            <constraint firstItem="aNv-7T-hab" firstAttribute="leading" secondItem="mAB-CO-Twr" secondAttribute="leading" constant="10" id="Dqk-9S-b2Z"/>
-                            <constraint firstItem="mAB-CO-Twr" firstAttribute="bottom" secondItem="aNv-7T-hab" secondAttribute="bottom" constant="30" id="bbw-RK-gI3"/>
-                            <constraint firstItem="mAB-CO-Twr" firstAttribute="trailing" secondItem="aNv-7T-hab" secondAttribute="trailing" constant="10" id="sj1-jw-BVr"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Edit" id="4P0-Ui-WfC">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="done" id="hLF-Pc-xDT">
-                                <connections>
-                                    <action selector="doneBtn:" destination="qMR-Gi-ZPu" id="lPx-GB-9CO"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="trash" id="Jjm-Sz-CQQ">
-                                <connections>
-                                    <action selector="deleteText:" destination="qMR-Gi-ZPu" id="LAt-7p-C1S"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="textFieldView" destination="aNv-7T-hab" id="faO-Sa-58V"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t0u-Qi-o23" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2099" y="-680"/>
-        </scene>
         <!--New-->
         <scene sceneID="ahf-fx-4ey">
             <objects>
@@ -182,9 +134,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="New" id="Mt4-4U-sR5">
                         <barButtonItem key="backBarButtonItem" title=" " id="npf-dV-fLe"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HTF-9W-9jR">
+                        <barButtonItem key="leftBarButtonItem" title=" " image="backArrow" id="1hb-SW-UYk">
                             <connections>
-                                <action selector="saveBtn:" destination="nC7-S9-Dsm" id="Dei-c5-A45"/>
+                                <action selector="backBtn:" destination="nC7-S9-Dsm" id="R9m-p7-4TP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="kRb-5U-nB6">
+                            <connections>
+                                <action selector="trashBtn:" destination="nC7-S9-Dsm" id="7DB-Uv-Y7K"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -219,30 +176,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8HO-WD-eV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1381" y="-40"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Y2L-rA-0SR">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="52h-Te-LE7" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4kO-UK-4J8">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="24"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="24"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="qMR-Gi-ZPu" kind="relationship" relationship="rootViewController" id="8lg-sA-iVA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yRo-GE-tcd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1380" y="-680"/>
         </scene>
     </scenes>
     <resources>

@@ -9,37 +9,46 @@
 import UIKit
 
 class TextViewController: UIViewController {
-
-   // @IBOutlet weak var textField: UITextField!
+    
+    // @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textFieldView: UITextView!
     var presenter = PresenterTextVC()
-    let backImg: UIImage = UIImage(named: "backArrow")! // img for back arrow
-    let backButton = UIBarButtonItem() //back button title
-   
+    var textForEdit = ""
+    var indexPathForEdit = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.view = self
-        navigationItem.leftBarButtonItem?.tintColor =  UIColor(displayP3Red: 250, green: 250, blue: 250, alpha: 1)
-        navigationItem.rightBarButtonItem?.tintColor = UIColor(displayP3Red: 250, green: 250, blue: 250, alpha: 1)
-        navigationController?.navigationBar.backIndicatorImage = backImg //custom back button
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImg
-        backButton.title = " "
-        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        presenter.showText(text: textForEdit)
     }
     
-    @IBAction func saveBtn(_ sender: Any) { //
-        SingleTon.shared.arrayWithIndexEdited.append(false)
-        let storBoard = UIStoryboard(name: "Main", bundle: nil)
-        let mainVC = storBoard.instantiateViewController(withIdentifier: "MainVC") as! ViewController
-        saveText()
+    @IBAction func backBtn(_ sender: Any) {
+       SingleTon.shared.addNewNoteFlag == true ? saveNewText() : saveEditedText()
+    }
     
-        navigationController?.popViewController(animated: true) //show previus VC
+    @IBAction func trashBtn(_ sender: Any) {
+        if SingleTon.shared.addNewNoteFlag == true {
+            showMainVC()
+        } else {
+            presenter.delTextFromArray(indexPath: indexPathForEdit)
+            showMainVC() //otobrazajetsja VC, ubirajet tekusii
+        }
+    }
+    
+    func saveNewText() { // append new note in ST array
+        SingleTon.shared.arrayWithIndexEdited.append(false)
+        presenter.appendTextToArray(text: textFieldView.text!) //
+        showMainVC()
+    }
+    func saveEditedText() {  // save edited text in the array in ST
+        SingleTon.shared.arrayWithIndexEdited[indexPathForEdit] = true
+        presenter.changeTextForRow(indexPath: indexPathForEdit)
+        showMainVC()
         
     }
-    
-    func saveText() { // append new note in ST array
-        presenter.appendTextToArray(text: textFieldView.text!) //
+    func showMainVC(){
+        navigationController?.popViewController(animated: true)
     }
     
 }

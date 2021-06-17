@@ -11,9 +11,15 @@ class PresenterMainVC {
     
     var view: ViewController?
     
-    func changeColor () {
-        view!.view.backgroundColor = .systemPink
+    func updateFilterSwitch() {
+        if SingleTon.shared.isFilterBtnOn == true {
+            SingleTon.shared.isFilterBtnOn = false
+            print(false)
+        } else {
+            SingleTon.shared.isFilterBtnOn = true
+            print(true)
+        }
     }
-    
+
 
 }
